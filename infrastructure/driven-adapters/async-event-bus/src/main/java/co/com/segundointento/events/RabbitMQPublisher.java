@@ -30,6 +30,5 @@ public class RabbitMQPublisher implements EventPublisher {
     public void publish(Persona persona) {
         LOGGER.info(String.format("Message sent -> %s", persona.toString()));
         rabbitTemplate.convertAndSend(EXCHANGE,ROUTING_KEY,persona);
-
     }
 }
